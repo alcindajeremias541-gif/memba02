@@ -20,12 +20,12 @@ import { signOut } from "@/lib/auth-client"
 const items = [
     {
         title: "Pesquisar Documentos",
-        url: "/",
+        url: "/dashboard",
         icon: Search,
     },
     {
         title: "Chat IA",
-        url: "/chat",
+        url: "/dashboard/chat",
         icon: Bot,
     },
 ]
