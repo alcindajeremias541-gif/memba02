@@ -20,16 +20,16 @@ export default function AuthPage() {
 
         try {
             if (isLogin) {
-                const { data, error } = await signIn.email({ email, password });
+                const { error } = await signIn.email({ email, password });
                 if (error) setError(error.message || "Ocorreu um erro ao entrar");
                 else window.location.href = "/";
             } else {
-                const { data, error } = await signUp.email({ email, password, name });
+                const { error } = await signUp.email({ email, password, name });
                 if (error) setError(error.message || "Ocorreu um erro ao registar");
                 else window.location.href = "/";
             }
-        } catch (err: any) {
-            setError(err?.message || "Algo correu mal");
+        } catch (err) {
+            setError(err instanceof Error ? err.message : "Algo correu mal");
         } finally {
             setLoading(false);
         }
