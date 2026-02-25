@@ -18,12 +18,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 export function NavBar() {
     const { data: session } = useSession();
 
-    const navLinks = [
-        { name: "Home", href: "/" },
-        { name: "Browse", href: "/browse" },
-        { name: "Categories", href: "/categories" },
-        { name: "About", href: "/about" },
-    ];
+    const navLinks: { name: string; href: string }[] = [];
 
     return (
         <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -84,10 +79,10 @@ export function NavBar() {
                         ) : (
                             <div className="flex items-center gap-2">
                                 <Button variant="ghost" asChild>
-                                    <Link href="/auth/signin">Log in</Link>
+                                    <Link href="/auth/signin">Login</Link>
                                 </Button>
                                 <Button asChild>
-                                    <Link href="/auth/signup">Sign up</Link>
+                                    <Link href="/auth/signup">Cadastro</Link>
                                 </Button>
                             </div>
                         )}
@@ -144,10 +139,10 @@ export function NavBar() {
                                 ) : (
                                     <div className="flex flex-col gap-3">
                                         <Button variant="outline" className="w-full" asChild>
-                                            <Link href="/auth/signin">Log in</Link>
+                                            <Link href="/auth/signin">Login</Link>
                                         </Button>
                                         <Button className="w-full" asChild>
-                                            <Link href="/auth/signup">Sign up</Link>
+                                            <Link href="/auth/signup">Cadastro</Link>
                                         </Button>
                                     </div>
                                 )}

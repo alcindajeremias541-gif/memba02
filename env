@@ -1,3 +1,0 @@
-DATABASE_URL="postgresql://memba:memba_dev_123@localhost:5432/memba"
-BETTER_AUTH_SECRET="dev-secret-change-me-in-production"
-BETTER_AUTH_URL="http://localhost:3000"
