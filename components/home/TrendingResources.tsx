@@ -1,9 +1,9 @@
 "use client";
 
 import { type Variants, motion } from "framer-motion";
-import { BookOpen, FileText, ExternalLink, Library } from "lucide-react";
+import { BookOpen, FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
 import Link from "next/link";
@@ -37,10 +37,7 @@ const container: Variants = {
     }
 };
 
-const item: Variants = {
-    hidden: { opacity: 0, y: 15 },
-    show: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 300, damping: 24 } }
-};
+
 
 export function TrendingResources({ resources }: TrendingResourcesProps) {
     if (resources.length === 0) {

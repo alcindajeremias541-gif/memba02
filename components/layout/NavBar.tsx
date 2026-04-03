@@ -16,17 +16,20 @@ import {
 import { Sheet, SheetContent, SheetTrigger, SheetHeader, SheetTitle } from "@/components/ui/sheet";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { MainNavigation } from "./MainNavigation";
 
 export function NavBar() {
     const { data: session, isPending } = useSession();
     const [mounted, setMounted] = useState(false);
-
+    
     useEffect(() => {
         setMounted(true);
     }, []);
 
     const navLinks: { name: string; href: string }[] = [
-        { name: "Explorer", href: "/explorer" },
+        { name: "Início", href: "/" },
+        { name: "Explorar", href: "/explorer" },
+        { name: "Minha Biblioteca", href: "/library" },
         { name: "Admin", href: "/admin" },
     ];
 
@@ -38,18 +41,9 @@ export function NavBar() {
                         <BookOpen className="h-6 w-6 text-primary" />
                         <span className="text-xl font-bold tracking-tight">Memba</span>
                     </Link>
-                    <nav className="hidden md:flex items-center gap-8">
-                        {navLinks.map((link) => (
-                            <Link
-                                key={link.name}
-                                href={link.href}
-                                className="text-sm font-semibold text-muted-foreground transition-all hover:text-primary relative group"
-                            >
-                                {link.name}
-                                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full" />
-                            </Link>
-                        ))}
-                    </nav>
+                    <div className="hidden md:block">
+                        <MainNavigation />
+                    </div>
                 </div>
 
                 <div className="flex items-center gap-4">
